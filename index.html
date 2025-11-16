@@ -17,8 +17,8 @@
             --text-primary: #ffffff;
             --text-secondary: #cccccc;
             --text-muted: #999999;
-            --accent-color: #8a2be2;
-            --accent-hover: #a55ff7;
+            --accent-color: #6a0808;
+            --accent-hover: #7e0b0b;
             --border-radius: 10px;
             --shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             --transition: all 0.3s ease;
@@ -159,7 +159,7 @@
         .cta:hover {
             background: var(--accent-hover);
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(138, 43, 226, 0.3);
+            box-shadow: 0 6px 12px rgba(228, 207, 247, 0.3);
         }
 
         .section {
@@ -469,6 +469,96 @@
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+        /* ANIMACIÓN DEL SLOGAN: Born from Shadows. Made to Shine. */
+.slogan {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    font-style: italic;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.text-reveal {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeInText 0.8s ease-out forwards;
+}
+
+.text-reveal span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+    filter: blur(2px);
+    color: #ffffff;
+    text-shadow: 
+        0 0 10px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(0, 0, 0, 0.6);
+    animation: revealLetter 0.6s ease-out forwards,
+               glowPulse 2s ease-in-out infinite 1.5s;
+}
+
+@keyframes fadeInText {
+    to { opacity: 1; }
+}
+
+@keyframes revealLetter {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+        text-shadow: 
+            0 0 5px rgba(255, 255, 255, 0.3),
+            0 0 15px rgba(255, 255, 255, 0.2);
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        text-shadow: 
+            0 0 5px rgba(255, 255, 255, 0.3),
+            0 0 15px rgba(255, 255, 255, 0.2),
+            0 0 30px rgba(106, 8, 8, 0.3);
+    }
+    50% {
+        text-shadow: 
+            0 0 10px rgba(255, 255, 255, 0.6),
+            0 0 25px rgba(255, 255, 255, 0.4),
+            0 0 50px rgba(106, 8, 8, 0.6),
+            0 0 70px rgba(126, 11, 11, 0.4);
+    }
+}
+
+/* Aplicar delay progresivo a cada letra */
+.text-reveal span:nth-child(1) { animation-delay: 0.1s; }
+.text-reveal span:nth-child(2) { animation-delay: 0.15s; }
+.text-reveal span:nth-child(3) { animation-delay: 0.2s; }
+.text-reveal span:nth-child(4) { animation-delay: 0.25s; }
+.text-reveal span:nth-child(5) { animation-delay: 0.3s; }
+.text-reveal span:nth-child(6) { animation-delay: 0.35s; }
+.text-reveal span:nth-child(7) { animation-delay: 0.4s; }
+.text-reveal span:nth-child(8) { animation-delay: 0.45s; }
+.text-reveal span:nth-child(9) { animation-delay: 0.5s; }
+.text-reveal span:nth-child(10) { animation-delay: 0.55s; }
+.text-reveal span:nth-child(11) { animation-delay: 0.6s; }
+.text-reveal span:nth-child(12) { animation-delay: 0.65s; }
+.text-reveal span:nth-child(13) { animation-delay: 0.7s; }
+.text-reveal span:nth-child(14) { animation-delay: 0.75s; } /* . */
+.text-reveal span:nth-child(15) { animation-delay: 0.85s; }
+.text-reveal span:nth-child(16) { animation-delay: 0.9s; }
+.text-reveal span:nth-child(17) { animation-delay: 0.95s; }
+.text-reveal span:nth-child(18) { animation-delay: 1s; }
+.text-reveal span:nth-child(19) { animation-delay: 1.05s; }
+.text-reveal span:nth-child(20) { animation-delay: 1.1s; }
+.text-reveal span:nth-child(21) { animation-delay: 1.15s; }
+.text-reveal span:nth-child(22) { animation-delay: 1.2s; }
+.text-reveal span:nth-child(23) { animation-delay: 1.25s; }
+.text-reveal span:nth-child(24) { animation-delay: 1.3s; }
+.text-reveal span:nth-child(25) { animation-delay: 1.35s; }
+.text-reveal span:nth-child(26) { animation-delay: 1.4s; }
+.text-reveal span:nth-child(27) { animation-delay: 1.45s; }
+.text-reveal span:nth-child(28) { animation-delay: 1.5s; } /* . */
     </style>
 </head>
 
@@ -477,36 +567,46 @@
     <div class="container">
         <header class="header">
             <img src="/img/LOGO-NSK-.png" alt="NSK Fashion Logo" class="logo">
-            <h1 class="slogan">Where Audacity Wears Art</h1>
+            <h1 class="slogan">Born from Shadows. Made to Shine.</h1>
             <div class="carousel">
                 <span class="arrow arrow-left" onclick="prevSlide()">&#8249;</span>
                 <div class="carousel-images" id="carouselImages">
-                    <img src="https://via.placeholder.com/180x250/000000/ffffff?text=Look+1" alt="Gothic Dress">
-                    <img src="https://via.placeholder.com/180x250/000000/ffffff?text=Look+2" alt="Purple Jumpsuit">
-                    <img src="https://via.placeholder.com/180x250/000000/ffffff?text=Look+3" alt="Denim Set">
+                    <img src="https://raw.githubusercontent.com/nsk-branding/img/refs/heads/main/VirtualCon/01-img-red.gif" alt="Gothic Dress">
+                    <img src="https://raw.githubusercontent.com/nsk-branding/img/refs/heads/main/VirtualCon/01-img-red.gif" alt="Purple Jumpsuit">
+                    <img src="https://raw.githubusercontent.com/nsk-branding/img/refs/heads/main/VirtualCon/01-img-red.gif" alt="Denim Set">
+                    <img src="https://raw.githubusercontent.com/nsk-branding/img/refs/heads/main/VirtualCon/01-img-red.gif"
+                        alt="Gothic Dress">
+                    <img src="https://raw.githubusercontent.com/nsk-branding/img/refs/heads/main/VirtualCon/01-img-red.gif"
+                        alt="Purple Jumpsuit">
+                    <img src="https://raw.githubusercontent.com/nsk-branding/img/refs/heads/main/VirtualCon/01-img-red.gif" alt="Denim Set">
+                    <img src="https://raw.githubusercontent.com/nsk-branding/img/refs/heads/main/VirtualCon/01-img-red.gif"
+                        alt="Gothic Dress">
+                    <img src="https://raw.githubusercontent.com/nsk-branding/img/refs/heads/main/VirtualCon/01-img-red.gif"
+                        alt="Purple Jumpsuit">
+                    <img src="https://raw.githubusercontent.com/nsk-branding/img/refs/heads/main/VirtualCon/01-img-red.gif" alt="Denim Set">
                 </div>
                 <span class="arrow arrow-right" onclick="nextSlide()">&#8250;</span>
             </div>
-            <a href="#new-collection" class="cta">Explore the New Collection</a>
+            <a href="#new-collection" class="cta">Explore full catalog</a>
         </header>
 
         <section class="section">
-            <h2>Featured This Week</h2>
+            <h2>Featured This Month</h2>
             <div class="featured">
                 <article class="product">
-                    <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Midnight+Panther"
+                    <img src="https://raw.githubusercontent.com/nsk-branding/img/refs/heads/main/VirtualCon/01-img-pink.gif"
                         alt="Midnight Panther Dress">
                     <h3 class="product-title">Midnight Panther Dress</h3>
                     <p class="product-desc">Elegancia gótica para la guerrera moderna.</p>
-                    <p class="product-price">€119.90</p>
+                    <p class="product-price">€14.90</p>
                     <a href="#midnight-panther" class="cta">View Details</a>
                 </article>
                 <article class="product">
-                    <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Rebel+Stitches"
+                    <img src="https://raw.githubusercontent.com/nsk-branding/img/refs/heads/main/VirtualCon/01-img-red.gif"
                         alt="Rebel Stitches Set">
                     <h3 class="product-title">Rebel Stitches Set</h3>
                     <p class="product-desc">Rompe las reglas con cada costura.</p>
-                    <p class="product-price">€95.50</p>
+                    <p class="product-price">€14.90</p>
                     <a href="#rebel-stitches" class="cta">View Details</a>
                 </article>
             </div>
@@ -515,23 +615,22 @@
         <section class="section">
             <h2>Our Creative Journey</h2>
             <div class="story">
-                <img src="https://via.placeholder.com/500x400/333333/ffffff?text=Creative+Workshop"
+                <img src="https://raw.githubusercontent.com/nsk-branding/img/refs/heads/main/VirtualCon/01-img-orange.gif"
                     alt="Workshop Inspiration">
                 <div class="story-text">
-                    <h3>The Thread of Our Vision</h3>
-                    <p>Every NSK piece begins—a spark ignites—a spark against untold stories. From the pour to the final
-                        soul, we empower you to craft your true self, true you to embrace woven into every design.</p>
-                    <a href="#philosophy" class="cta">Discover Our Philosophy</a>
+                    <h3>Realistic skins</h3>
+                    <p></p>
+                    <a href="#philosophy" class="cta">More Skins</a>
                 </div>
             </div>
         </section>
 
         <section class="section">
             <h2>The Latest Collections</h2>
-            <h3>Unveiling New Designs</h3>
+            <h3>New Colections every Month</h3>
             <div class="gallery">
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/250x300/000000/ffffff?text=Gothic+Embrace"
+                    <img src="https://raw.githubusercontent.com/nsk-branding/img/refs/heads/main/VirtualCon/01-img-orange.gif"
                         alt="Gothic Embrace Gown">
                     <div class="gallery-overlay">
                         <p>Gothic Embrace Gown - €115.00</p>
@@ -539,7 +638,7 @@
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/250x300/000000/ffffff?text=Crimson+Rebel"
+                    <img src="https://raw.githubusercontent.com/nsk-branding/img/refs/heads/main/VirtualCon/01-img-orange.gif"
                         alt="Crimson Rebel Set">
                     <div class="gallery-overlay">
                         <p>Crimson Rebel Set - €115.00</p>
@@ -547,28 +646,28 @@
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/250x300/000000/ffffff?text=New+Design+1" alt="New Design 1">
+                    <img src="https://raw.githubusercontent.com/nsk-branding/img/refs/heads/main/VirtualCon/01-img-orange.gif" alt="New Design 1">
                     <div class="gallery-overlay">
                         <p>New Design 1 - €100.00</p>
                         <a href="#new1" class="cta">View Product</a>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/250x300/000000/ffffff?text=New+Design+2" alt="New Design 2">
+                    <img src="https://raw.githubusercontent.com/nsk-branding/img/refs/heads/main/VirtualCon/01-img-orange.gif" alt="New Design 2">
                     <div class="gallery-overlay">
                         <p>New Design 2 - €120.00</p>
                         <a href="#new2" class="cta">View Product</a>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/250x300/000000/ffffff?text=New+Design+3" alt="New Design 3">
+                    <img src="https://raw.githubusercontent.com/nsk-branding/img/refs/heads/main/VirtualCon/01-img-orange.gif" alt="New Design 3">
                     <div class="gallery-overlay">
                         <p>New Design 3 - €110.00</p>
                         <a href="#new3" class="cta">View Product</a>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/250x300/000000/ffffff?text=New+Design+4" alt="New Design 4">
+                    <img src="https://raw.githubusercontent.com/nsk-branding/img/refs/heads/main/VirtualCon/01-img-orange.gif" alt="New Design 4">
                     <div class="gallery-overlay">
                         <p>New Design 4 - €130.00</p>
                         <a href="#new4" class="cta">View Product</a>
@@ -580,21 +679,21 @@
 
         <section class="section community">
             <h2>Join Our Rebellion</h2>
-            <p>Be Part the NS Family</p>
+            <p>Be Part the NSK Family</p>
             <div class="social-icons">
                 <div class="social-item">
-                    <img src="https://via.placeholder.com/50x50/333333/ffffff?text=IG" alt="Instagram"
+                    <img src="https://raw.githubusercontent.com/nsk-branding/img/refs/heads/main/VirtualCon/01-img-orange.gif" alt="Instagram"
                         class="social-icon">
-                    <div class="social-label">Follow Us Instagram</div>
+                    <div class="social-label">Loana NSK</div>
                 </div>
                 <div class="social-item">
-                    <img src="https://via.placeholder.com/50x50/333333/ffffff?text=FB" alt="Facebook"
+                    <img src="https://raw.githubusercontent.com/nsk-branding/img/refs/heads/main/VirtualCon/01-img-orange.gif" alt="Facebook"
                         class="social-icon">
-                    <div class="social-label">Follow Us on Facebook Tribe</div>
+                    <div class="social-label">Nuska</div>
                 </div>
                 <div class="social-item">
-                    <img src="https://via.placeholder.com/50x50/333333/ffffff?text=TT" alt="TikTok" class="social-icon">
-                    <div class="social-label">TikTok</div>
+                    <img src="https://raw.githubusercontent.com/nsk-branding/img/refs/heads/main/VirtualCon/01-img-orange.gif" alt="TikTok" class="social-icon">
+                    <div class="social-label">NSK Fashion</div>
                 </div>
             </div>
             <p class="newsletter-text">Join our newsletter for early access, discounts & style tips!</p>
@@ -685,6 +784,19 @@
         document.querySelector('.form').addEventListener('submit', (e) => {
             e.preventDefault();
             alert('Subscribed! Thank you for joining the NSK family.');
+        });
+  
+        // Dividir el texto en letras con <span>
+        document.addEventListener("DOMContentLoaded", () => {
+            const text = document.querySelector(".text-reveal");
+            const str = text.textContent;
+            text.innerHTML = ""; // Limpiar
+
+            str.split("").forEach((char, i) => {
+                const span = document.createElement("span");
+                span.textContent = char === " " ? "\u00A0" : char;
+                text.appendChild(span);
+            });
         });
     </script>
 </body>
